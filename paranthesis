@@ -1,0 +1,33 @@
+s=input()
+arr=[]
+flag=0
+for i in s:
+    if(i=="("):
+        arr.append(i)
+    elif(i=='{'):
+        arr.append(i)
+    elif(i=="["):
+        arr.append(i)
+    elif(i==")"):
+        if(arr.pop()=='('):
+            continue
+        else:
+            print('false')
+            flag=1
+            break
+    elif(i=="}"):
+        if(arr.pop()=='{'):
+            continue
+        else:
+            print('false')
+            flag=1
+            break
+    elif(i=="]"):
+        if(arr.pop()=='['):
+            continue
+        else:
+            print('false')
+            flag=1
+            break
+if(arr==[] and flag==0):
+    print('true')
